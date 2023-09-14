@@ -130,8 +130,8 @@
 
 		<!-- MAIN -->
 		<main>
-			 <!-- BOTON REGISTRAR COMPRA-->
-			 <div class="head">
+			  <!-- BOTON REGISTRAR COMPRA-->
+			  <div class="head">
 				<div class="table-data">
 				  <h1>Crear nuevo rol</h1>
 				</div>
@@ -140,55 +140,55 @@
 				</div>
 			  </div>
         
-          <div class="table-data">
+          <form class="table-data">
             <div class="order">
                 <div class="container">
                     <label for="roleName">Nombre del rol:</label>
-                    <input type="text" id="roleName" name="roleName">
+                    <input type="text" id="roleName" name="roleName" >
                 </div>
                 <h4>Modulos:</h4>
                 <div class="container2">
                     <div class="container-check">
-                        <label class="custom-checkbox" for="module-check">
-                            <input type="checkbox" id="module-check">
+                        <label class="custom-checkbox" for="">
+                            <input type="checkbox" id="">
                             <span class="checkmark"></span>
                           </label>
-                          <label for="module-check" class="label-text">Productos</label>
+                          <label class="label-text">Productos</label>
                     </div>
                     <div class="container-check">
                         <label class="custom-checkbox">
-                            <input type="checkbox" id="module-check1">
+                            <input type="checkbox" id="">
                             <span class="checkmark"></span>
                           </label>
-                          <label for="module-check1" class="label-text">Ventas</label>
+                          <label  class="label-text">Ventas</label>
                     </div>
                     <div class="container-check">
                         <label class="custom-checkbox">
-                            <input type="checkbox" id="module-check2">
+                            <input type="checkbox" id="">
                             <span class="checkmark"></span>
                           </label>
-                          <label for="module-check2" class="label-text">Compras</label>
+                          <label  class="label-text">Compras</label>
                     </div>
                     <div class="container-check">
                         <label class="custom-checkbox">
-                            <input type="checkbox" id="module-check3">
+                            <input type="checkbox" id="">
                             <span class="checkmark"></span>
                           </label>
-                          <label for="module-check3" class="label-text">Proveedores</label>
+                          <label  class="label-text">Proveedores</label>
                     </div>
                 </div>
                 <div class="container3">
-                    <button type="submit">Crear</button>
+                    <button type="submit" id="crearRol">Crear</button>
                 </div>
             </div> 
-            </div> 
+            </form> 
 					  
 				
 		</main>
 	</section>
 	
 	
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="/assets/js/RegistrarRoles.js"></script>
 	<script src="/assets/js/global.js"></script>
 </body>
