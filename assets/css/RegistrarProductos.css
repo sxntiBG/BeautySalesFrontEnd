@@ -751,7 +751,7 @@ input[type="number"] {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     margin-bottom: 20px;
-	margin-left: 20px;
+	margin-right: 20px;
 }
 
 /* BOTON CONFIRMAR */
@@ -759,7 +759,7 @@ input[type="number"] {
 	background-color: #DB504A;
 	color: #fff;
 	margin-block-end: 20px;
-	margin-left: 10px;
+	margin-right: 100%;
 }
 
 .register-button,
@@ -771,6 +771,7 @@ input[type="number"] {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
     border-radius: 5px;
+
 }
 
 .register-button {
@@ -807,6 +808,7 @@ input[type="number"] {
 
 
 
+/* Estilos generales para el formulario */
 .form-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -826,23 +828,20 @@ input[type="number"] {
 	margin-right: 20px;
   }
   
-  .form-row input {
+  .form-row input,
+  .form-row select.estadoCate {
 	flex: 1;
 	padding: 5px;
+	
   }
-  .form-row button {
-	padding: 1px 10px;}
-
-
-/*BOTON REGISTRO ESTADO ACTIVO / INACTIVO */
-.estadoSelect {
-	background-color: var(--dark);
-	color: white;
+  
+  /* BOTON REGISTRO ESTADO ACTIVO / INACTIVO */
+  .estadoCate {
+	background-color: rgba(255, 255, 255, 0.5);
+	color: black;
 	border-radius: 5px;
-	padding: 10px 20px;
 	cursor: pointer;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	transition: background-color 0.3s ease;
-	margin-block-end: 20px;
-}
+  }
   

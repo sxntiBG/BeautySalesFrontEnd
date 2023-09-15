@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       
       setTimeout(function () {
-        window.location.href = "/assets/pages/productosAdmin.html";
+        window.location.href = "/assets/pages/Productos.html";
       }, 1500);
     });
   
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cancelButtonText: "No, volver"
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = "/assets/pages/productosAdmin.html";
+          window.location.href = "/assets/pages/Productos.html";
         }
       });
     });

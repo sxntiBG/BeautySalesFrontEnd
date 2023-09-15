@@ -727,7 +727,7 @@ height: 40px;
 
 .confirm-button-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex;
     margin-top: 20px;
 }
 
@@ -751,15 +751,15 @@ input[type="number"] {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     margin-bottom: 20px;
-	margin-left: 20px;
+	margin-right: 20px;
 }
 
 /* BOTON CONFIRMAR */
 .remove-button{
 	background-color: #DB504A;
 	color: #fff;
-	margin-block-end: 20px;
-	margin-left: 10px;
+	margin-block: 20px;
+	margin-right: 10px;
 }
 
 .register-button,
@@ -771,6 +771,8 @@ input[type="number"] {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
     border-radius: 5px;
+	text-align: right;
+	width: 100%;
 }
 
 .register-button {
@@ -839,13 +841,14 @@ input[type="number"] {
 
 /*BOTON REGISTRO ESTADO ACTIVO / INACTIVO */
 .estadoSelect {
-	background-color: var(--dark);
-	color: white;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: black;
 	border-radius: 5px;
 	padding: 10px 20px;
 	cursor: pointer;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 2px 4px rgba(126, 125, 125, 0.1);
 	transition: background-color 0.3s ease;
 	margin-block-end: 20px;
 }
   
+
