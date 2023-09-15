@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
           
           setTimeout(function () {
-            window.location.href = "/BeautySales-main/BeautySales/assets/pages/comprasAdmin.html";
+            window.location.href = "/assets/pages/Facturacion.html";
           }, 1500);
         });
       
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cancelButtonText: "No, volver"
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "/BeautySales-main/BeautySales/assets/pages/comprasAdmin.html";
+              window.location.href = "/assets/pages/Facturacion.html";
             }
           });
         });
