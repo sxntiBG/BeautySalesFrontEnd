@@ -115,20 +115,25 @@ document.addEventListener("DOMContentLoaded", function () {
 //AGREGAR TABLAS
 document.addEventListener("DOMContentLoaded", function () {
   const addButton = document.getElementById("add-button");
-  const productForm = document.getElementById("product-form");
+  const formTotal = document.querySelector(".form-total");
 
   addButton.addEventListener("click", function () {
-      const formRow = document.createElement("div");
-      formRow.className = "form-row";
-      formRow.innerHTML = `
-          <label for="product-name">Productos:</label>
-          <input type="text" id="product-name" name="product-name" required>
-          <label for="product-price">Precio:</label>
-          <input type="text" id="product-price" name="product-price" required>
-          <label for="product-quantity">Cantidad:</label>
-          <input type="number" id="product-quantity" name="product-quantity" required>
-          <button type="button" class="remove-button"><i class='bx bxs-trash-alt' ></i></button>
-      `;
+    const formRow = document.createElement("div");
+    formRow.className = "form-row";
+    formRow.innerHTML = `
+      <label for="product-name">Productos:</label>
+      <input type="text" id="product-name" name="product-name" required>
+      <label for="product-price">Precio:</label>
+      <input type="text" id="product-price" name="product-price" required>
+      <label for="product-quantity">Cantidad:</label>
+      <input type="number" id="product-quantity" name="product-quantity" required>
+      <button type="button" class="remove-button"><i class='bx bxs-trash-alt' ></i></button>
+    `;
+
+    // Insertar los campos del formulario de producto antes del formulario de total
+    formTotal.parentNode.insertBefore(formRow, formTotal);
+
+
 
       const removeButton = formRow.querySelector(".remove-button");
       removeButton.addEventListener("click", function () {

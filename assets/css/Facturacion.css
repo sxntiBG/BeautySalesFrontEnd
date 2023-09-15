@@ -47,7 +47,14 @@ body {
 }
 
 
+.add-product {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+  }
 
+  .add-product button {
+    margin-left: 10px; /* Espacio entre los botones */
+  }
   
 
 
@@ -809,6 +816,11 @@ input[type="number"] {
 }
 
 
+#product-quantityy{
+	margin-right: 98px;
+	margin-left: -8px;
+
+}
 
 
 

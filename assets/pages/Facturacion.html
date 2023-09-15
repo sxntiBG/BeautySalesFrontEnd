@@ -16,7 +16,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="/assets/css/Facturacion.css" />
 
-    <title>Facturación</title>
+    <title>Registro de ventas</title>
   </head>
   <body>
     <!-- SIDEBAR -->
@@ -54,7 +54,7 @@
             <li>
               <a href="Facturacion.html">
                 <i class="bx bx-detail"></i>
-                <span class="text">Facturación</span>
+                <span class="text">ventas</span>
               </a>
             </li>
             <li>
@@ -113,7 +113,7 @@
       <!-- NAVBAR -->
       <nav>
         <i class="bx bx-menu"></i>
-        <a href="Facturacion.html" class="nav-link">Facturación</a>
+        <a href="Facturacion.html" class="nav-link">Registro de ventas</a>
         <form action="">
           <div class="form-input">
             <button type="submit" class="search-btn">
@@ -135,54 +135,69 @@
         <div class="table-data">
           <div class="order">
             <div class="head">
-              <h3 id="fondoTitulo">Registrar ventas</h3>
+              <h3 id="fondoTitulo">Registrar venta</h3>
             </div>
 
-            <form class="form-row">
-              <label for="product-name">Productos:</label>
-              <input
-                type="text"
-                id="product-name"
-                name="product-name"
-                required
-              />
-              <label for="product-price">Precio:</label>
-              <input
-                type="text"
-                id="product-price"
-                name="product-price"
-                required
-              />
-              <label for="product-quantity">Cantidad:</label>
-              <input
-                type="number"
-                id="product-quantity"
-                name="product-quantity"
-                required
-              />
-            </form>
-
-            <form action="" class="form-total">
-              <label for="">Total: </label>
-              <input type="number" class="total" style="width: 20%" />
-            </form>
-
-            <div class="add-product">
-              <form id="product-form">
-                <button type="button" id="add-button">
-                  <i class="bx bxs-plus-circle"></i>
-                </button>
-                <a href=""
-                  ><button type="submit" class="register-button">
-                    <i class="bx bxs-save"></i></button
-                ></a>
-                <a href=""
-                  ><button type="submit" class="cancel-button">
-                    <i class="bx bxs-x-circle"></i></button
-                ></a>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+              <form class="form-row">
+                  <label for="product-name">Productos:</label>
+                  <input type="text" id="product-name" name="product-name" required>
+                  <label for="product-price">Precio:</label>
+                  <input type="text" id="product-price" name="product-price" required>
+                  <label for="product-quantity">Cantidad:</label>
+                  <input type="number" id="product-quantityy" name="product-quantity" required>
               </form>
-            </div>
           </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <form action="" class="form-total">
+                <div style="display: flex; align-items: center;">
+                    <label for="total" style="margin-right: 10px;">Total:</label>
+                    <input type="number" id="total" style="width: 60%;" />
+                </div>
+            </form>
+        </div>
+        
+        
+
+          <script>
+              // Obtén referencias a los elementos del formulario
+    const productName = document.getElementById("product-name");
+    const productPrice = document.getElementById("product-price");
+    const productQuantity = document.getElementById("product-quantityy");
+    const totalInput = document.getElementById("total");
+
+    // Función para calcular el total
+    function calcularTotal() {
+        const price = parseFloat(productPrice.value) || 0;
+        const quantity = parseInt(productQuantity.value) || 0;
+        const total = price * quantity;
+        totalInput.value = total.toFixed(2); // Redondea el total a 2 decimales
+    }
+
+    // Agrega event listeners para los campos de precio y cantidad
+    productName.addEventListener("input", calcularTotal);
+    productPrice.addEventListener("input", calcularTotal);
+    productQuantity.addEventListener("input", calcularTotal);
+        </script>
+              <div class="add-product">
+                  <form id="product-form">
+                      <button type="button" id="add-button">
+                          <i class="bx bxs-plus-circle"></i>
+                      </button>
+                      
+                  <a href="">
+                    <button type="submit" class="register-button">
+                      <i class="bx bxs-save"></i>
+                    </button>
+                  </a>
+                  <a href="">
+                    <button type="submit" class="cancel-button">
+                      <i class="bx bxs-x-circle"></i>
+                    </button>
+                  </a>
+                </form>
+              </div>
+    
         </div>
       </main>
     </section>
