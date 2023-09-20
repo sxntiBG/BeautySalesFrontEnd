@@ -1,79 +1,42 @@
+ //*Validaciones
 
+// Función que se ejecutará al enviar el formulario
+document.getElementById('miFormulario').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evita el envío predeterminado del formulario
 
+  // Obtiene los valores de los campos del formulario (agrega los campos restantes)
+  var nombre = document.getElementById('nombre').value;
+  var telefono = document.getElementById('telefono').value;
+  var correo = document.getElementById('correo').value;
+  var direccion = document.getElementById('direccion').value;
+  var descripcion = document.getElementById('descripcion').value;
+  var categoria = document.getElementById('categoria').value
 
-
-
-
-//DAGUFF EN KICK
-
-document.addEventListener("DOMContentLoaded", function () {
-    const productForm = document.getElementById("product-form");
-    
-    const addButton = productForm.querySelector(".register-button");
-    const cancelButton = productForm.querySelector(".cancel-button");
-  
-    addButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      
+  // Verifica si los campos obligatorios están llenos
+  if (nombre.trim() !== '' && telefono.trim() !== '' && correo.trim() !== '' && direccion.trim() !== '' && descripcion.trim() !== '' && categoria.trim() !== '') {
+      // Muestra una alerta de confirmación usando SweetAlert
       Swal.fire({
-        title: "Proveedor agregado ",
-        text: "El proveedor ha sido actualizado exitosamente.",
-        icon: "success",
-        showConfirmButton: false,
-        timer: 1500
-      });
-      
-      setTimeout(function () {
-        window.location.href = "/assets/pages/Proveedores.html";
-      }, 1500);
-    });
-  
-    cancelButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      
-      Swal.fire({
-        title: "Cancelar",
-        text: "¿Estás seguro de que quieres cancelar?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sí, cancelar",
-        cancelButtonText: "No, volver"
+          title: '¿Estás seguro?',
+          text: '¿Quieres guardar el formulario con los datos ingresados?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, guardar',
+          cancelButtonText: 'Cancelar'
       }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/assets/pages/Proveedores.html";
-        }
+          // Si el usuario confirma, se envía el formulario y luego se redirige
+          if (result.isConfirmed) {
+              // Envía el formulario
+              window.location.href = '/assets/pages/Productos.html';
+          }
       });
-    });
-  });
-
-// Función para mostrar una alerta antes de redirigir
-function confirmNavigation(url) {
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Es posible que no se guarden los cambios.",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Sí, continuar",
-    cancelButtonText: "Cancelar"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      window.location.href = url;
-    }
-  });
-}
-
-// Asignar la función a los enlaces
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("#sidebar a");
-  links.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const url = link.getAttribute("href");
-      confirmNavigation(url);
-    });
-  });
+  } else {
+      // Si algún campo obligatorio está vacío, muestra una alerta de error
+      Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Por favor, completa todos los campos obligatorios.',
+          showConfirmButton: false,
+          timer: 2000
+      });
+  }
 });

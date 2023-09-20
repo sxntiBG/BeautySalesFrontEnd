@@ -131,53 +131,71 @@
 		  <!-- NAVBAR -->
 
 		<!-- MAIN -->
-		<main>
-			
-			 <div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3 id="fondoTitulo" >Registrar </h3>
-					</div >
-
-					<form class="form-row">
-						<label for="product-name">Nombre:</label>
-						<input type="text" id="product-name" name="product-name" required>
-            <label for="product-name">Telefono:</label>
-						<input type="text" id="product-name" name="product-name" required>
-            <label for="product-name"> Correo:</label>
-              <input type="text" id="product-name" name="product-name" required>
-            </form>
-            <form class="form-row">
-              <label for="product-name">Direccion:</label>
-              <input type="text" id="product-name" name="product-name" required>
-              <label for="product-name">Categoria:</label>
-              <select class="estadoSelect"  id="botonEstado">
-                <option class="estadoSelect" value="Activate">Shampoo</option>
-                <option class="estadoSelect" value="Inactivate">Acondicionador</option>
-                <option class="estadoSelect" value="Activate">Tinte</option>
-                <option class="estadoSelect" value="Inactivate">Gomina</option>
-                </select>
-              <label for="product-price">Descripcion:</label>
-              <input type="text" id="product-name" name="product-name" required>
-						</form>
-           
-					
-            <div class="add-categoria">
-              <form id="product-form" style="display: flex; justify-content: flex-end;">
-                <a href=""><button type="submit" class="register-button" style="margin-right: 16px;"><i class='bx bxs-save'></i></button></a>
-                <a href=""><button type="submit" class="cancel-button"><i class='bx bxs-x-circle'></i></button></a>
-              </form>
+    <main>
+      <div class="head">
+       <div class="table-data">
+         <h2>Registrar Proveedores</h2>
+       </div>
+       <div class="btn-table">
+         <a href="/assets/pages/Proveedores.html">
+         <button class="btn-up" id="btn-up">volver</button>
+         </a>
+       </div>
+       </div>
+      <div class="table-data">
+       <div class="order">
+       
+        
+          <form class="table-data" id="miFormulario">
+        <div class="order">
+            <div class="container">
+                <div class="container2">
+                    <div class="container3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre">
+                    </div>
+                    <div class="container3">
+                      <label for="telefono">Telefono</label>
+                      <input type="number" id="telefono">
+                  </div>
+              </div>
+                <div class="container2">
+                    <div class="container3">
+                        <label for="correo">Correo</label>
+                        <input type="text" id="correo">
+                    </div>
+                    <div class="container3">
+                      <label for="direccion">Direccion</label>
+                      <input type="number" id="direccion">
+                  </div>
+              </div>
+              <div class="container2">
+                <div class="container3">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" id="descripcion">
+                </div>
+                <div class="container4">
+                  <label for="categoria">Categoria</label>
+                  <select id="categoria">
+                      <option value="">Elegir categoria</option>
+                      <option value="Shampoos">Shampoos</option>
+                      <option value="Acondicionador">Acondicionador</option>
+                      <option value="Geles">Geles</option>
+                      <option value="Tintes">Tintes</option>
+                  </select>
+                </div>
             </div>
             
-		
-
-			
-			</div>
-      
-
-		</main>
-	</section>
-
+                <div class="container3">
+                    <button type="submit">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+            
+        
+    </main>
+  </section>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="/assets/js/RegistrarProveedores.js"></script>
