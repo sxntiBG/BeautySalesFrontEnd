@@ -1,144 +1,40 @@
+ //*Validaciones
 
+// Función que se ejecutará al enviar el formulario
+document.getElementById('miFormulario').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evita el envío predeterminado del formulario
 
+  // Obtiene los valores de los campos del formulario (agrega los campos restantes)
+  var producto = document.getElementById('producto').value;
+  var proveedor = document.getElementById('proveedor').value;
+  var precio = document.getElementById('precio').value;
+  var cantidad = document.getElementById('cantidad').value;
 
-
-
-
-
-
-
-//DAGUFF EN KICK
-
-// TO DELETE SOMETHING
-document.addEventListener("DOMContentLoaded", function () {
-    const editButtons = document.querySelectorAll(".edit-button");
-    const deleteButtons = document.querySelectorAll(".delete-button");
-
-    editButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            // Handle edit functionality here
-            console.log("Edit button clicked");
-        });
-    });
-
-    deleteButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            // Handle delete functionality here
-            console.log("Delete button clicked");
-        });
-    });
-});
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const showButtons = document.querySelectorAll(".show-button");
-
-        showButtons.forEach(function (button) {
-            button.addEventListener("click", function () {
-                const detailsRow = button.parentElement.parentElement.nextElementSibling;
-                detailsRow.classList.toggle("visible");
-            });
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-        const productForm = document.getElementById("product-form");
-        
-        const addButton = productForm.querySelector(".register-button");
-        const cancelButton = productForm.querySelector(".cancel-button");
-      
-        addButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          
-          Swal.fire({
-            title: "Compra agregada",
-            text: "La Compra ha sido actualizado exitosamente.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          
-          setTimeout(function () {
-            window.location.href = "/assets/pages/comprasAdmin.html";
-          }, 1500);
-        });
-      
-        cancelButton.addEventListener("click", function (event) {
-          event.preventDefault();
-          
-          Swal.fire({
-            title: "Cancelar",
-            text: "¿Estás seguro de que quieres cancelar?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Sí, cancelar",
-            cancelButtonText: "No, volver"
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location.href = "/assets/pages/comprasAdmin.html";
-            }
-          });
-        });
+  // Verifica si los campos obligatorios están llenos
+  if (producto.trim() !== '' && proveedor.trim() !== '' && precio.trim() !== '' && cantidad.trim() !== '') {
+      // Muestra una alerta de confirmación usando SweetAlert
+      Swal.fire({
+          title: '¿Estás seguro?',
+          text: '¿Quieres guardar el formulario con los datos ingresados?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, guardar',
+          cancelButtonText: 'Cancelar'
+      }).then((result) => {
+          // Si el usuario confirma, se envía el formulario y luego se redirige
+          if (result.isConfirmed) {
+              // Envía el formulario
+              window.location.href = '/assets/pages/Productos.html';
+          }
       });
-
-      // Función para mostrar una alerta antes de redirigir
-function confirmNavigation(url) {
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Es posible que no se guarden los cambios.",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Sí, continuar",
-    cancelButtonText: "Cancelar"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      window.location.href = url;
-    }
-  });
-}
-
-// Asignar la función a los enlaces
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("#sidebar a");
-  links.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const url = link.getAttribute("href");
-      confirmNavigation(url);
-    });
-  });
-});
-
-
-//AGREGAR TABLAS
-
-document.addEventListener("DOMContentLoaded", function () {
-    const addButton = document.getElementById("add-button");
-    const productForm = document.getElementById("product-form");
-
-    addButton.addEventListener("click", function () {
-        const formRow = document.createElement("div");
-        formRow.className = "form-row";
-        formRow.innerHTML = `
-            <label for="product-name">Productos:</label>
-            <input type="text" id="product-name" name="product-name" required>
-            <label for="product-price">Proveedor:</label>
-            <input type="text" id="product-price" name="product-name" required>
-            <label for="product-price">Precio:</label>
-            <input type="text" id="product-price" name="product-price" required>
-            <label for="product-quantity">Cantidad:</label>
-            <input type="number" id="product-quantity" name="product-quantity" required>
-            <button type="button" class="remove-button"><i class='bx bxs-trash-alt' ></i></button>
-        `;
-
-        const removeButton = formRow.querySelector(".remove-button");
-        removeButton.addEventListener("click", function () {
-            formRow.remove();
-        });
-
-        productForm.insertBefore(formRow, addButton);
-    });
+  } else {
+      // Si algún campo obligatorio está vacío, muestra una alerta de error
+      Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Por favor, completa todos los campos obligatorios.',
+          showConfirmButton: false,
+          timer: 2000
+      });
+  }
 });

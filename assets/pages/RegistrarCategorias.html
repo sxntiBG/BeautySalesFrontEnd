@@ -132,41 +132,45 @@
 
 		<!-- MAIN -->
 		<main>
-		
-			 <div class="table-data">
-				<div class="order">
-					<div class="head">
-						<h3 id="fondoTitulo" >Registrar</h3>
-					</div>
-
-					<form class="form-row">
-						<label for="product-name">Nombre:</label>
-						<input type="text" id="product-name" name="product-name" required>
-						<label for="product-price">Descripcion:</label>
-						<input type="text" id="product-name" name="product-name" required>
-						<label for="product-price">Estado:</label>
-						<select class="estadoSelect"  id="botonEstado">
-							<option class="estadoSelect" value="Activate">Activo</option>
-							<option class="estadoSelect" value="Inactivate">Inactivo</option>
-						  </select>
-						 
-						</form>
-					
-						<div class="add-categoria">
-							<form id="product-form">
-								<a href=""><button type="submit" class="register-button"><i class='bx bxs-save'></i></button></a>
-								<a href=""><button type="submit" class="cancel-button"><i class='bx bxs-x-circle'></i></button></a>
-							</form>
-						</div>
-					
-			</div>
-
-			
-			</div>
-
-		</main>
-	</section>
-
+      <div class="head">
+       <div class="table-data">
+         <h2>Registrar Categorias</h2>
+       </div>
+       <div class="btn-table">
+         <a href="/assets/pages/Categorias.html">
+         <button class="btn-up" id="btn-up">volver</button>
+         </a>
+       </div>
+       </div>
+      <div class="table-data">
+       <div class="order">
+       
+        
+          <form class="table-data" id="miFormulario">
+        <div class="order">
+            <div class="container">
+                <div class="container2">
+                    <div class="container3">
+                        <label for="producto">Producto</label>
+                        <input type="text" id="producto">
+                    </div>
+                    <div class="container4">
+                      <label for="categoria">Categoria</label>
+                      <input type="text" id="categoria">
+                    </div>
+                </div>
+               
+  
+                <div class="container3">
+                    <button type="submit">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+            
+        
+    </main>
+  </section>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="/assets/js/RegistrarCategorias.js"></script>
