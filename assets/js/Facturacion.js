@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
           
           setTimeout(function () {
-            window.location.href = "/assets/pages/Facturacion.html";
+            window.location.href = "/assets/pages/Ventas.html";
           }, 1500);
         });
       
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cancelButtonText: "No, volver"
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "/assets/pages/Facturacion.html";
+              window.location.href = "/assets/pages/Ventas.html";
             }
           });
         });

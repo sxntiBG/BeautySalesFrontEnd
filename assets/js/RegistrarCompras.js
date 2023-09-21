@@ -24,7 +24,7 @@ document.getElementById('miFormulario').addEventListener('submit', function (eve
           // Si el usuario confirma, se envía el formulario y luego se redirige
           if (result.isConfirmed) {
               // Envía el formulario
-              window.location.href = '/assets/pages/Productos.html';
+              window.location.href = '/assets/pages/Compras.html';
           }
       });
   } else {
